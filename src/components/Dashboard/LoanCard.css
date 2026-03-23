@@ -1,0 +1,154 @@
+.loan-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.loan-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--loan-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.loan-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--loan-color);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3),
+              0 0 30px color-mix(in srgb, var(--loan-color) 20%, transparent);
+}
+
+.loan-card:hover::before {
+  opacity: 1;
+}
+
+.loan-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.loan-type-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.loan-info {
+  flex: 1;
+}
+
+.loan-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.loan-lender {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.loan-arrow {
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.loan-card:hover .loan-arrow {
+  color: var(--loan-color);
+  transform: translateX(4px);
+}
+
+.loan-amount {
+  margin-bottom: 20px;
+}
+
+.loan-amount-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.loan-amount-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+}
+
+.loan-progress-section {
+  margin-bottom: 20px;
+}
+
+.loan-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.loan-progress-bar {
+  height: 6px;
+  background: var(--bg-glass);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.loan-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1s ease;
+  box-shadow: 0 0 10px var(--loan-color);
+}
+
+.loan-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.loan-detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.loan-detail.emi {
+  background: var(--bg-glass);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.emi-amount {
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text-primary);
+}
+
+.emi-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
