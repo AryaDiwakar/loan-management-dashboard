@@ -10,7 +10,6 @@ import PaymentHistoryChart from './components/Charts/PaymentHistoryChart';
 import LoanProgressChart from './components/Charts/LoanProgressChart';
 import Chatbot from './components/Chatbot/Chatbot';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
 import MyLoans from './pages/MyLoans';
 import Analytics from './pages/Analytics';
 import Settings from './pages/Settings';
@@ -184,9 +183,7 @@ function App() {
       <Route path="/login" element={
         user ? <Navigate to="/dashboard" replace /> : <Login onLogin={handleLogin} />
       } />
-      <Route path="/signup" element={
-        user ? <Navigate to="/dashboard" replace /> : <Signup onSignup={handleLogin} />
-      } />
+
       <Route path="/dashboard" element={
         user ? <DashboardContent user={user} onLogout={handleLogout} /> : <Navigate to="/login" replace />
       } />
