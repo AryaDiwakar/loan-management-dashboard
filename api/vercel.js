@@ -24,12 +24,12 @@ const limiter = rateLimit({
 
 app.use('/api/', limiter);
 
-app.use('/api/auth', authRoutes);
-app.use('/api/user', userRoutes);
-app.use('/api/loans', loanRoutes);
-app.use('/api/payments', paymentRoutes);
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
+app.use('/loans', loanRoutes);
+app.use('/payments', paymentRoutes);
 
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
